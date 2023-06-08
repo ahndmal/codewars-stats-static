@@ -20,6 +20,13 @@
       fetch("https://www.codewars.com/api/v1/users/iawaknahc")
         .then((res) => res.json())
         .then((resp) => {
+          //todo
+        });
+
+      //
+      fetch("data.json")
+        .then((res) => res.json())
+        .then((resp) => {
           console.log(resp);
         });
     </script>
