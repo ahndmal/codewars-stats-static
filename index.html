@@ -17,18 +17,21 @@
     </div>
 
     <script type="text/javascript">
-      fetch("https://www.codewars.com/api/v1/users/iawaknahc")
-        .then((res) => res.json())
-        .then((resp) => {
-          //todo
-        });
+      (async () => {
+        const users = [];
+        const resp = await fetch("data.json");
+        const respJson = await resp.json(); // array
+        respJson.forEach((user) => {
+          const userData = await getUser(user);
+          users.push(userData);
+      })();
 
-      //
-      fetch("data.json")
-        .then((res) => res.json())
-        .then((resp) => {
-          console.log(resp);
-        });
+
+      async function getUser(name) {
+        const resp = await fetch(`https://www.codewars.com/api/v1/users/${user.name}`);
+        const jsonData = await resp.json();
+        return jsonData;
+      }
     </script>
   </body>
 </html>
