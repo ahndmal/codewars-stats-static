@@ -27,7 +27,7 @@
         });
       })();
 
-      async function getUser(name) {
+      async function getUser(user) {
         const resp = await fetch(
           `https://www.codewars.com/api/v1/users/${user.name}`
         );
