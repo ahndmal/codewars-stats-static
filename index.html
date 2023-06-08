@@ -24,11 +24,13 @@
         respJson.forEach(async (user) => {
           const userData = await getUser(user);
           users.push(userData);
+        });
       })();
 
-
       async function getUser(name) {
-        const resp = await fetch(`https://www.codewars.com/api/v1/users/${user.name}`);
+        const resp = await fetch(
+          `https://www.codewars.com/api/v1/users/${user.name}`
+        );
         const jsonData = await resp.json();
         return jsonData;
       }
