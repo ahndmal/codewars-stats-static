@@ -21,7 +21,7 @@
         const users = [];
         const resp = await fetch("data.json");
         const respJson = await resp.json(); // array
-        respJson.forEach((user) => {
+        respJson.forEach(async (user) => {
           const userData = await getUser(user);
           users.push(userData);
       })();
