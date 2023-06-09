@@ -3,8 +3,16 @@
   margin: 25px;
 }
 
-#users-root {
+#usersRoot {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
+}
+
+.user_data {
+  padding: 5px;
+  width: 100px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid black;
 }
