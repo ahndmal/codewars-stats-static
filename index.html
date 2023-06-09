@@ -20,14 +20,14 @@
       (async () => {
         const users = [];
         const resp = await fetch("data.json");
-        // const respJson = await resp.json(); // array
-        resp.forEach(async (user) => {
+        const respJson = await resp.json(); // array
+        respJson.forEach(async (user) => {
           const userData = await getUser(user);
           users.push(userData);
         });
       })();
 
-      async function getUser(user) {
+      async function getUser(name) {
         const resp = await fetch(
           `https://www.codewars.com/api/v1/users/${user.name}`
         );
