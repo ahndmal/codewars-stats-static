@@ -18,23 +18,23 @@
 
     <script type="text/javascript">
       (async () => {
+        async function getUser(name) {
+          const resp = await fetch(
+            `https://www.codewars.com/api/v1/users/${user.name}`
+          );
+          const jsonData = await resp.json();
+          return jsonData;
+        }
+
         const users = [];
         const resp = await fetch("data.json");
         const respJson = await resp.json(); // array
         respJson.forEach(async (user) => {
-          console.log(user);
-          //   const userData = await getUser(user);
-          //   users.push(userData);
+          //   console.log(user);
+          const userData = await getUser(user);
+          users.push(userData);
         });
       })();
-
-      async function getUser(name) {
-        const resp = await fetch(
-          `https://www.codewars.com/api/v1/users/${user.name}`
-        );
-        const jsonData = await resp.json();
-        return jsonData;
-      }
     </script>
   </body>
 </html>
