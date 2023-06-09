@@ -32,6 +32,8 @@
           }
         });
 
+        users.sort((a, b) => b - a);
+
         const usersRoot = document.querySelector("#usersRoot");
         haskellers.forEach((user) => {
           let userDiv = document.createElement("div");
