@@ -23,11 +23,16 @@
           users.push(user);
         });
 
-        // https://github.com/devicons/devicon/raw/master/icons/r/r-plain.svg
-        // https://www.codewars.com/packs/assets/profile-pic.f3a90aca.png
+        const haskellers = [];
+
+        users.forEach((user) => {
+          if (user.ranks.languages.haskell) {
+            haskellers.push(user);
+          }
+        });
 
         const usersRoot = document.querySelector("#usersRoot");
-        users.forEach((user) => {
+        haskellers.forEach((user) => {
           let userDiv = document.createElement("div");
           userDiv.innerHTML = `<div class="user_data">
                 <span> ${user.username}</span>
@@ -36,14 +41,6 @@
                 <span> ${user.clan}</span>
             </div>`;
           usersRoot.appendChild(userDiv);
-        });
-
-        const haskellers = [];
-
-        users.forEach((user) => {
-          if (user.ranks.languages.haskell) {
-            haskellers.push(user);
-          }
         });
       })();
     </script>
