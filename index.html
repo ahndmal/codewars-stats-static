@@ -22,8 +22,9 @@
         const resp = await fetch("data.json");
         const respJson = await resp.json(); // array
         respJson.forEach(async (user) => {
-          const userData = await getUser(user);
-          users.push(userData);
+          console.log(user);
+          //   const userData = await getUser(user);
+          //   users.push(userData);
         });
       })();
 
