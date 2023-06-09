@@ -2,3 +2,9 @@
   padding: 24px;
   margin: 25px;
 }
+
+#users-root {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}

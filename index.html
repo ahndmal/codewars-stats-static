@@ -27,15 +27,17 @@
           users.push(user);
         });
 
+        // https://github.com/devicons/devicon/raw/master/icons/r/r-plain.svg
+
         const usersRoot = document.querySelector("#users-root");
         users.forEach((user) => {
           let userDiv = document.createElement("div");
           userDiv.innerHTML = `<div>
                 <p>${user.username}</p>
-                <p></p>
-                <p></p>
-                <p></p>
-                <p></p>
+                <p>${user.name}</p>
+                <p>${user.honor}</p>
+                <p>${user.clan}</p>
+                
             </div>`;
           usersRoot.appendChild(userDiv);
         });
