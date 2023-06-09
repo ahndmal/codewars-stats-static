@@ -12,27 +12,33 @@
         <h2>Stats</h2>
         <div>
           <p>lorem...</p>
+          <div id="" users-root></div>
         </div>
       </div>
     </div>
 
     <script type="text/javascript">
       (async () => {
-        async function getUser(user) {
-          const resp = await fetch(
-            `https://www.codewars.com/api/v1/users/${user.name}`
-          );
-          const jsonData = await resp.json();
-          return jsonData;
-        }
-
         const users = [];
         const resp = await fetch("data.json");
         const respJson = await resp.json(); // array
-        respJson.forEach(async (user) => {
+
+        respJson.forEach((user) => {
           //   console.log(user);
-          const userData = await getUser(user);
           users.push(userData);
+        });
+
+        const usersRoot = document.querySelector("#users-root");
+        users.forEach((user) => {
+          let userDiv = document.createElement("div");
+          userDiv.innerHTML = `<div>
+                <p>${user.username}</p>
+                <p></p>
+                <p></p>
+                <p></p>
+                <p></p>
+            </div>`;
+          usersRoot.appendChild(userDiv);
         });
       })();
     </script>
