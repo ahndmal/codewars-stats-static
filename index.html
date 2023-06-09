@@ -8,12 +8,8 @@
   </head>
   <body>
     <div class="root">
-      <div>
-        <h2>Stats</h2>
-        <div>
-          <div id="usersRoot"></div>
-        </div>
-      </div>
+      <h2>Stats</h2>
+      <div id="usersRoot"></div>
     </div>
 
     <script type="text/javascript">
@@ -39,6 +35,12 @@
                 <p>${user.clan}</p>
             </div>`;
           usersRoot.appendChild(userDiv);
+        });
+
+        users.forEach((user) => {
+          if (user.ranks.languages.haskell) {
+            console.log(user);
+          }
         });
       })();
     </script>
